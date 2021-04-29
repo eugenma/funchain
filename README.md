@@ -9,7 +9,7 @@ See the example just for comparison. (The real meaning is not important)
 In plain Python
 
     with os.scandir(BASE_DIR) as it:
-    dirs = filter(lambda i: i.is_dir(follow_symlinks=False), it)
+       dirs = filter(lambda i: i.is_dir(follow_symlinks=False), it)
        valid_dirs = filter(is_valid_dir, dirs)
        tasks_packages = map(PackageKind.from_dir_entry, valid_dirs)
        valid_only = filter(lambda i: i[1] != PackageKind.NOTHING, tasks_packages)
