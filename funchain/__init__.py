@@ -1,0 +1,1 @@
+from .funchain import Chain
