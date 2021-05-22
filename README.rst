@@ -40,6 +40,17 @@ Now consider the `funchain` variant of the same logic
 
 The code is not a full representation of all available functionals, but will growth with time.
 
+In case one wants to split the instructions into multiple lines but doesn't like the line continuation operator
+at the ends, it is possible to put the chain into braces. Example
+
+.. code:: python
+
+  with os.scandir(BASE_DIR) as it:
+      task_files = (Chain(it)
+         .filter(lambda i: i.is_dir(follow_symlinks=False))
+         .filter(is_valid_dir)
+      )
+
 Installation
 ----------------
 Currently it is not a fully fledged package yet. Hence the installation goes directly from github
